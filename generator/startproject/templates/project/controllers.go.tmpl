@@ -1,0 +1,11 @@
+package {{ .Name }}
+
+import (
+	"fmt"
+	"net/http"
+)
+
+// HomeHandler is a Hello World view
+func homeController(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "Hi there!, You are in ", r.URL.Path)
+}

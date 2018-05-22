@@ -1,0 +1,12 @@
+package {{ .Name }}
+
+import (
+	"net/http"
+	// "tools.adidas-group.com/bitbucket/chatojor/burrow/middlewares"
+)
+
+func middlewares(next http.Handler) http.Handler {
+	// next = middlewares.SwaggerMiddleware(next)
+	//ADD custom middlewares
+	return next
+}

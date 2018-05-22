@@ -1,0 +1,15 @@
+package {{ .Name }}
+
+import (
+	"encoding/json"
+	"net/http"
+)
+
+func get{{ .Name | Title }}Ctrl(w http.ResponseWriter, r *http.Request) {
+	// Replace it with the logic of your controller
+	users := []string{
+		"Jorge Chato",
+	}
+
+	json.NewEncoder(w).Encode(users)
+}

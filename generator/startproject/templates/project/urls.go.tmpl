@@ -1,0 +1,19 @@
+package {{ .Name }}
+
+import (
+	"github.com/gorilla/mux"
+
+	// Add as many apps as you want to be in the same project
+	// "{{ .Pkg }}/APP_NAME"
+)
+
+func urlPatterns() *mux.Router {
+	router := mux.NewRouter()
+
+	router.HandleFunc("/", homeController).Methods("GET").Name("Home")
+	// Add routers from an application:
+	// APP_NAME.URLPatterns(router.PathPrefix("/APP_ENDPOINT").Subrouter())
+	// or create a new endpoint to the actual project
+
+	return router
+}

@@ -1,0 +1,13 @@
+package {{ .Name }}
+
+import "github.com/jinzhu/gorm"
+
+// DB connection
+var DB *gorm.DB
+
+// NewConnection create a new connection to a db
+func NewConnection(db *gorm.DB) {
+	DB = db
+	// BURROW uses https://github.com/jinzhu/gorm ORM
+	// ADD DB.AutoMigrate(&StructName{}) to create a model in the db
+}

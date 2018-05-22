@@ -1,0 +1,15 @@
+package {{ .Name }}
+
+import (
+	"github.com/gorilla/mux"
+)
+
+//URLPatterns package routers
+func URLPatterns(router *mux.Router) *mux.Router {
+	router.StrictSlash(true) // Default will redirect the endpoint to the right tail
+
+	// Use regular expressions in the endpoint like https://github.com/gorilla/mux
+	router.HandleFunc("/", get{{ .Name | Title }}Ctrl).Methods("GET").Name("{{ .Name }}Home")
+
+	return router
+}

@@ -1,0 +1,25 @@
+package {{ .Name }}
+
+import (
+	"log"
+
+	"github.com/gobuffalo/envy"
+	"github.com/jorgechato/burrow/database"
+
+	// Add as many apps models as you want to be migrated into the database
+	// "{{ .Pkg }}/APP_NAME"
+)
+
+func init() {
+	var err error
+	// Change the GO_ENV as you like. The GO_ENV should math with th database.yml file
+	env := envy.Get("GO_ENV", "development")
+	connection, err := database.NewConnection(env)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	// Load the database session into each app
+	// APP_NAME.NewConnection(connection)
+}
