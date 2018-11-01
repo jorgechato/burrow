@@ -1,5 +1,7 @@
 # Burrow
 
+**No longer under maintenance, moving into graphQL systems.**
+
 Project inspired in django and buffalo.
 Burrow is a Go API First eco-system (not a framework jet). Design to focus on
 writing your app without needing to reinvent the wheel.
